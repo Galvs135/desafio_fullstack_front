@@ -181,19 +181,8 @@ export const Register = () => {
           flexDir={["column", "column", "column", "row", "row"]}
           gap={[6, 6, 6, 6, 8]}
         >
-          <Box
-            display="flex"
-            w={["100%", "100%", "100%", "100%", "50%"]}
-            justifyContent={[
-              "center",
-              "center",
-              "center",
-              "flex-start",
-              "flex-start",
-            ]}
-          ></Box>
           <Flex
-            w={["100%", "100%", "100%", "100%", "50%"]}
+            w={["100%", "100%", "100%", "100%", "100%"]}
             alignItems="center"
             justifyContent="center"
           >

@@ -78,9 +78,9 @@ export const Login = () => {
           alignItems="center"
         >
           <Flex
-            w={["100%", "100%", "100%", "100%", "50%"]}
+            w={["100%", "100%", "100%", "100%", "100%"]}
             alignItems="center"
-            justifyContent={["center", "center", "center", "initial"]}
+            justifyContent={["center", "center", "center", "center"]}
           >
             <Box
               as={motion.form}
@@ -146,16 +146,6 @@ export const Login = () => {
                   </Box>
                 </Box>
                 <Box>
-                  <Text
-                    fontSize="12px"
-                    textAlign="center"
-                    fontFamily="text"
-                    w="100%"
-                    justifyContent="center"
-                  >
-                    Ainda não possui uma conta? Comece agora mesmo a planejar
-                    seus exercícios e ficar por dentro de uma vida saudável
-                  </Text>
                   <Box pt={6}>
                     <Button
                       as={motion.button}
