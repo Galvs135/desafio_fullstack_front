@@ -147,8 +147,8 @@ const AuthProvider = ({ children }: ChildrenProp) => {
           logOut();
           toast({
             position: "top",
-            title: "Sua sessão expirou",
-            description: "Por favor, faça o login novamente",
+            title: "Session Expired",
+            description: "Session Expired",
             status: "warning",
             duration: 2000,
             isClosable: true,
@@ -156,9 +156,8 @@ const AuthProvider = ({ children }: ChildrenProp) => {
         } else {
           toast({
             position: "top",
-            title: "Ocorreu um error",
-            description:
-              "Erro desconhecido por favor tente novamente mais tarde",
+            title: "Error",
+            description: "Uncaught Error",
             status: "error",
             duration: 2000,
             isClosable: true,
@@ -173,8 +172,8 @@ const AuthProvider = ({ children }: ChildrenProp) => {
       .then(({ data }) => {
         toast({
           position: "top",
-          title: "Conta criada.",
-          description: "sua conta foi criada com sucesso, faça o login.",
+          title: "Sucessful Register",
+          description: "Sucessful Register",
           status: "success",
           duration: 3000,
           isClosable: true,
@@ -184,8 +183,8 @@ const AuthProvider = ({ children }: ChildrenProp) => {
       .catch((_) => {
         toast({
           position: "top",
-          title: "Error ao criar conta, tente novamente.",
-          description: "Tente um email diferente.",
+          title: "Something Wrong, try again",
+          description: "Something Wrong, try again",
           status: "error",
           duration: 3000,
           isClosable: true,
@@ -283,8 +282,8 @@ const AuthProvider = ({ children }: ChildrenProp) => {
       .catch((_) => {
         toast({
           position: "top",
-          title: "Error ao criar conta, tente novamente.",
-          description: "Tente um email diferente.",
+          title: "Something Wrong, try again",
+          description: "Something Wrong, try again",
           status: "error",
           duration: 3000,
           isClosable: true,
@@ -317,8 +316,8 @@ const AuthProvider = ({ children }: ChildrenProp) => {
       .catch((_) => {
         toast({
           position: "top",
-          title: "Error ao criar conta, tente novamente.",
-          description: "Tente um email diferente.",
+          title: "Something Wrong, try again",
+          description: "Something Wrong, try again",
           status: "error",
           duration: 3000,
           isClosable: true,
@@ -341,8 +340,8 @@ const AuthProvider = ({ children }: ChildrenProp) => {
           logOut();
           toast({
             position: "top",
-            title: "Sua sessão expirou",
-            description: "Por favor, faça o login novamente",
+            title: "Session Expired",
+            description: "Session Expired",
             status: "warning",
             duration: 2000,
             isClosable: true,
@@ -350,9 +349,8 @@ const AuthProvider = ({ children }: ChildrenProp) => {
         } else {
           toast({
             position: "top",
-            title: "Ocorreu um error",
-            description:
-              "Erro desconhecido por favor tente novamente mais tarde",
+            title: "Something Wrong, try again",
+            description: "Something Wrong, try again",
             status: "error",
             duration: 2000,
             isClosable: true,
