@@ -7,7 +7,7 @@ export const CustomersPage = () => {
   const { user, getUser } = useAuth();
 
   useEffect(() => {
-    getUser();
+    getUser(localStorage.getItem("@fullstack_challenge:Token") as string);
   }, [!user]);
 
   return !user?.costumers ? (

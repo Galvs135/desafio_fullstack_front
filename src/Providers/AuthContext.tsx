@@ -14,7 +14,7 @@ interface ContextProps {
   singUp: (data: SignUpCredentials) => void;
   token: string;
   signIn: (credentials: SignInCredentials) => Promise<void>;
-  getUser: () => void;
+  getUser: (token: string) => void;
   logOut: () => void;
   user?: User;
   customer?: User;
@@ -91,7 +91,7 @@ const AuthProvider = ({ children }: ChildrenProp) => {
   const signIn = useCallback(async ({ email, name }: SignInCredentials) => {
     await api
       .post("/login", { email, name })
-      .then((response) => {
+      .then(async (response) => {
         const { token } = response.data;
         localStorage.setItem("@fullstack_challenge:Token", token);
         setData({ token });
@@ -104,7 +104,7 @@ const AuthProvider = ({ children }: ChildrenProp) => {
           duration: 3000,
           isClosable: true,
         });
-        api
+        await api
           .get(`register/${userId}`, {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -117,26 +117,19 @@ const AuthProvider = ({ children }: ChildrenProp) => {
             );
             setUser(response.data);
           });
+      })
+      .then((response) => {
         history.push("/home");
       })
-      .catch((error) => {
-        toast({
-          position: "top",
-          title: "Name or email wrong",
-          description: "Name or email wrong",
-          status: "error",
-          duration: 3000,
-          isClosable: true,
-        });
-      });
+      .catch((error) => {});
   }, []);
 
-  const getUser = useCallback(async () => {
-    const { userId }: any = jwt_decode(data.token);
+  const getUser = useCallback(async (token: string) => {
+    const { userId }: any = await jwt_decode(token);
     await api
       .get(`register/${userId}`, {
         headers: {
-          Authorization: `Bearer ${data.token}`,
+          Authorization: `Bearer ${token}`,
         },
       })
       .then((response) => {

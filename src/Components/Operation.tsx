@@ -30,7 +30,9 @@ export const Operation = ({
           as={motion.button}
           sx={linkCss}
           onClick={() => {
-            getUser();
+            getUser(
+              localStorage.getItem("@fullstack_challenge:Token") as string
+            );
             onDrawerMenuClose();
             setTimeout(() => {
               onUpdatePerfilOpen();
